@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Film</title>
+</head>
+<body>
+<h1>Edit Film</h1>
+<form action="/film/<%= film._id %>/update" method="POST">
+    <label>Title: <input type="text" name="title" value="<%= film.title %>"></label><br>
+    <label>Director: <input type="text" name="director" value="<%= film.director %>"></label><br>
+    <label>Year: <input type="number" name="year" value="<%= film.year %>"></label><br>
+    <label>Genre: <input type="text" name="genre" value="<%= film.genre %>"></label><br>
+    <button type="submit">Update Film</button>
+</form>
+<a href="/">Back to list</a>
+</body>
+</html>

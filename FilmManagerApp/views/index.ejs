@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Manager</title>
+</head>
+<body>
+<h1>Film Manager</h1>
+<a href="/new">Add New Film</a>
+<ul>
+    <% films.forEach(film => { %>
+        <li>
+            <%= film.title %> by <%= film.director %> (<%= film.year %>) - Genre: <%= film.genre %>
+            <form action="/film/<%= film._id %>/delete" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+            <form action="/film/<%= film._id %>/edit" method="GET" style="display:inline;">
+                <button type="submit">Edit</button>
+            </form>
+        </li>
+    <% }) %>
+</ul>
+</body>
+</html>
